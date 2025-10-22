@@ -1,0 +1,17 @@
+[
+  { "name": "Maria",    "weight": 100, "sex": "F" },
+  { "name": "Ana",      "weight": 95,  "sex": "F" },
+  { "name": "Beatriz",  "weight": 90,  "sex": "F" },
+  { "name": "Juliana",  "weight": 85,  "sex": "F" },
+  { "name": "Fernanda", "weight": 80,  "sex": "F" },
+  { "name": "Mariana",  "weight": 75,  "sex": "F" },
+  { "name": "Camila",   "weight": 70,  "sex": "F" },
+  { "name": "Larissa",  "weight": 65,  "sex": "F" },
+  { "name": "Amanda",   "weight": 60,  "sex": "F" },
+  { "name": "Gabriela", "weight": 55,  "sex": "F" },
+  { "name": "Carolina", "weight": 50,  "sex": "F" },
+  { "name": "Letícia",  "weight": 45,  "sex": "F" },
+  { "name": "Patrícia", "weight": 40,  "sex": "F" },
+  { "name": "Aline",    "weight": 35,  "sex": "F" },
+  { "name": "Tatiane",  "weight": 30,  "sex": "F" }
+]

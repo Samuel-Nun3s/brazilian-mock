@@ -1,0 +1,17 @@
+[
+  { "name": "João",      "weight": 100, "sex": "M" },
+  { "name": "Pedro",     "weight": 95,  "sex": "M" },
+  { "name": "Lucas",     "weight": 90,  "sex": "M" },
+  { "name": "Gabriel",   "weight": 85,  "sex": "M" },
+  { "name": "Miguel",    "weight": 80,  "sex": "M" },
+  { "name": "Rafael",    "weight": 75,  "sex": "M" },
+  { "name": "Felipe",    "weight": 70,  "sex": "M" },
+  { "name": "Matheus",   "weight": 65,  "sex": "M" },
+  { "name": "Guilherme", "weight": 60,  "sex": "M" },
+  { "name": "Bruno",     "weight": 55,  "sex": "M" },
+  { "name": "Leonardo",  "weight": 50,  "sex": "M" },
+  { "name": "Carlos",    "weight": 45,  "sex": "M" },
+  { "name": "José",      "weight": 40,  "sex": "M" },
+  { "name": "André",     "weight": 35,  "sex": "M" },
+  { "name": "Thiago",    "weight": 30,  "sex": "M" }
+]
