@@ -1,0 +1,22 @@
+[
+  { "name": "Silva",     "weight": 100 },
+  { "name": "Santos",    "weight": 95  },
+  { "name": "Oliveira",  "weight": 90  },
+  { "name": "Souza",     "weight": 85  },
+  { "name": "Rodrigues", "weight": 80  },
+  { "name": "Ferreira",  "weight": 75  },
+  { "name": "Alves",     "weight": 70  },
+  { "name": "Pereira",   "weight": 65  },
+  { "name": "Lima",      "weight": 60  },
+  { "name": "Gomes",     "weight": 55  },
+  { "name": "Costa",     "weight": 50  },
+  { "name": "Ribeiro",   "weight": 45  },
+  { "name": "Martins",   "weight": 40  },
+  { "name": "Carvalho",  "weight": 35  },
+  { "name": "Almeida",   "weight": 30  },
+  { "name": "Lopes",     "weight": 25  },
+  { "name": "Soares",    "weight": 20  },
+  { "name": "Fernandes", "weight": 15  },
+  { "name": "Vieira",    "weight": 10  },
+  { "name": "Barbosa",   "weight": 5   }
+]
