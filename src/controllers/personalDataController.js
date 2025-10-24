@@ -12,15 +12,13 @@
 export const getPersonalData = async (req, res) => {
 
   try {
-    const { gender } = req.query;
+    const { gender } = req.query.toLowerCase();
 
     if (gender && !['m', 'f'].includes(gender.toLowerCase())) {
       return res.status(400).json({ 
         error: "Gênero inválido! Use 'M' ou 'F'." 
       });
     }
-    
-    const genderFormatted = setGender(req.query.gender);
     
     
 
@@ -31,7 +29,7 @@ export const getPersonalData = async (req, res) => {
       CPF: null,
       RG: null,
       dateOfBirth: null,
-      gender: genderFormatted,
+      gender: setGender(req.query.gender),
       maritalStatus: null,
       nationality: null
     }
