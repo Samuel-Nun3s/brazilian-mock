@@ -9,6 +9,8 @@
   Nacionalidade/Naturalidade (cidade e UF)
 */
 
+import { generateFullName } from "../services/nameService";
+
 export const getPersonalData = async (req, res) => {
 
   try {
@@ -20,21 +22,21 @@ export const getPersonalData = async (req, res) => {
       });
     }
     
-    
+    const name = generateFullName(gender || 'm');
+    const motherName = generateFullName('f');
+    const fatherName = generateFullName('m');
 
-    const data = {
-      name: null,
-      motherName: null,
-      fatherName: null,
+    res.status(201).json({
+      name,
+      motherName,
+      fatherName,
       CPF: null,
       RG: null,
       dateOfBirth: null,
       gender: setGender(req.query.gender),
       maritalStatus: null,
       nationality: null
-    }
-  
-    res.status(201).json({ result: data });
+    });
 
   } catch (error) {
     res.status(400).json({ message: error.message });
