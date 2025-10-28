@@ -9,12 +9,13 @@
   Nacionalidade/Naturalidade (cidade e UF)
 */
 
-import { generateFullName } from "../services/nameService";
+import { generateFullName } from "../services/nameService.js";
+import { generateCPF } from "../utils/cpfUtils.js";
 
 export const getPersonalData = async (req, res) => {
 
   try {
-    const { gender } = req.query.toLowerCase();
+    const { gender } = req.query;
 
     if (gender && !['m', 'f'].includes(gender.toLowerCase())) {
       return res.status(400).json({ 
@@ -30,7 +31,7 @@ export const getPersonalData = async (req, res) => {
       name,
       motherName,
       fatherName,
-      CPF: null,
+      CPF: generateCPF(),
       RG: null,
       dateOfBirth: null,
       gender: setGender(req.query.gender),

@@ -1,4 +1,4 @@
-import { loadJSON } from "../utils/jsonLoader.json";
+import { loadJSON } from "../utils/jsonLoader.js";
 import { weightedRandom } from "../utils/weightedRandom.js";
 
 function getMaleNames() {
@@ -30,6 +30,6 @@ export function generateFullName(gender) {
   const firstName = generateFirstName(gender);
   const lastName1 = generateLastName();
   const lastName2 = generateLastName();
-
-  return `${firstName} ${lastName1} ${lastName2}`;
+  
+  return `${firstName.name} ${lastName1.name} ${lastName2.name}`;
 }
