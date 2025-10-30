@@ -1,15 +1,25 @@
 export function generateCPF() {
-  const cpfArray = [];
+  const digits = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));
 
-  for (let i = 0; i < 9; i++) {
-    cpfArray.push(Math.floor(Math.random() * 10));
+  const firstDigit = calculateCheckDigit(digits, 10);
+  const secondDigit = calculateCheckDigit([...digits, firstDigit], 11);
+
+  const cpfArray = [...digits, firstDigit, secondDigit];
+
+  return formatCPF(cpfArray);
+}
+
+function calculateCheckDigit(digits, initialWeight) {
+  let sum = 0;
+  let weight = initialWeight;
+
+  for (const digit of digits) {
+    sum += digit * weight;
+    weight--;
   }
 
-  let cpf = getCheckDigit(cpfArray);
-
-  cpf = formatCPF(cpf);
-
-  return cpf;
+  const remainder = sum % 11;
+  return remainder < 2 ? 0 : 11 - remainder;
 }
 
 function getCheckDigit(cpfArray) {
@@ -53,22 +63,11 @@ function getCheckDigit(cpfArray) {
 }
 
 function formatCPF(cpf) {
-  let cpfString;
-
-  if (Array.isArray(cpf)) {
-    cpfString = cpf.join('');
-  } else {
-    cpfString = cpf.replace(/[^\d]/g, '');
-  }
+  let cpfString = Array.isArray(cpf) ? cpf.join('') : cpf.replace(/[^\d]/g, '');
 
   if (cpfString.length !== 11) {
     throw new Error('CPF deve ter 11 digitos');
   }
 
-  const part1 = cpfString.slice(0, 3);
-  const part2 = cpfString.slice(3, 6);
-  const part3 = cpfString.slice(6, 9);
-  const part4 = cpfString.slice(9, 11);
-
-  return `${part1}.${part2}.${part3}-${part4}`;
+  return cpfString.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, `$1.$2.$3-$4`);
 }
