@@ -4,9 +4,9 @@ export function generateCPF() {
   const firstDigit = calculateCheckDigit(digits, 10);
   const secondDigit = calculateCheckDigit([...digits, firstDigit], 11);
 
-  const cpfArray = [...digits, firstDigit, secondDigit];
+  const CPFArray = [...digits, firstDigit, secondDigit];
 
-  return formatCPF(cpfArray);
+  return formatCPF(CPFArray);
 }
 
 function calculateCheckDigit(digits, initialWeight) {
@@ -22,52 +22,12 @@ function calculateCheckDigit(digits, initialWeight) {
   return remainder < 2 ? 0 : 11 - remainder;
 }
 
-function getCheckDigit(cpfArray) {
-  if (cpfArray.length < 9 || cpfArray.length > 10) {
-    throw new Error('CPF fora do tamanho ideal!');
-  }
+function formatCPF(CPF) {
+  let CPFString = Array.isArray(CPF) ? CPF.join('') : CPF.replace(/[^\d]/g, '');
 
-  let count = 0;
-
-  if (cpfArray.length === 9) {
-    count = 10;
-  } else if (cpfArray.length === 10) {
-    count = 11;
-  }
-
-  const cpfSumArray = [];
-
-  cpfArray.forEach((number, index) => {
-    cpfSumArray[index] = number * count;
-
-    count--;
-  })
-
-  const CPFSum = cpfSumArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-  const firstCheckDigit = CPFSum % 11;
-
-  if (firstCheckDigit < 2) {
-    cpfArray.push(0);
-  } else {
-    cpfArray.push(11 - firstCheckDigit);
-  }
-
-  if (cpfArray.length === 11) {
-    formatCPF(cpfArray);
-
-    return cpfArray;
-  }
-
-  cpfArray = getCheckDigit(cpfArray);
-  return cpfArray;
-}
-
-function formatCPF(cpf) {
-  let cpfString = Array.isArray(cpf) ? cpf.join('') : cpf.replace(/[^\d]/g, '');
-
-  if (cpfString.length !== 11) {
+  if (CPFString.length !== 11) {
     throw new Error('CPF deve ter 11 digitos');
   }
 
-  return cpfString.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, `$1.$2.$3-$4`);
+  return CPFString.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, `$1.$2.$3-$4`);
 }
