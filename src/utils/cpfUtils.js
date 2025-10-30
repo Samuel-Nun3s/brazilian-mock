@@ -1,10 +1,13 @@
 export function generateCPF() {
-  const cpfArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // for (let i = 0; i < 9; i++) {
-  //   cpfArray.push(Math.floor(Math.random() * 10));
-  // }
+  const cpfArray = [];
 
-  const cpf = getCheckDigit(cpfArray);
+  for (let i = 0; i < 9; i++) {
+    cpfArray.push(Math.floor(Math.random() * 10));
+  }
+
+  let cpf = getCheckDigit(cpfArray);
+
+  cpf = formatCPF(cpf);
 
   return cpf;
 }
@@ -50,5 +53,22 @@ function getCheckDigit(cpfArray) {
 }
 
 function formatCPF(cpf) {
-  
+  let cpfString;
+
+  if (Array.isArray(cpf)) {
+    cpfString = cpf.join('');
+  } else {
+    cpfString = cpf.replace(/[^\d]/g, '');
+  }
+
+  if (cpfString.length !== 11) {
+    throw new Error('CPF deve ter 11 digitos');
+  }
+
+  const part1 = cpfString.slice(0, 3);
+  const part2 = cpfString.slice(3, 6);
+  const part3 = cpfString.slice(6, 9);
+  const part4 = cpfString.slice(9, 11);
+
+  return `${part1}.${part2}.${part3}-${part4}`;
 }
