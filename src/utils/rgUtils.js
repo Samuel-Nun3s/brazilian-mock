@@ -1,6 +1,5 @@
 export function generateRG() {
-  const digits = [1, 2, 3, 4, 5, 6, 7, 8];
-  // const digits = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10))
+  const digits = Array.from({ length: 8 }, () => Math.floor(Math.random() * 10))
 
   const checkDigit = calculateCheckDigit(digits);
 
@@ -18,7 +17,26 @@ function calculateCheckDigit(digits) {
     weight++;
   }
 
-  const result = (sum / 11) - 11;
-  
-  return result;
+  const result = 11 - (sum % 11);
+  let checkDigit;
+
+  if (result === 10) {
+    checkDigit = "X";
+  } else if (result === 11) {
+    checkDigit = 0;
+  } else {
+    checkDigit = result;
+  }
+
+  return checkDigit;
+}
+
+function formatRG(RG) {
+  let RGString = Array.isArray(RG) ? RG.join('') : RG.replace(/[^\d]/g, '');
+
+  if (RGString.length !== 9) {
+    throw new Error('RG deve ter 9 digitos');
+  }
+
+  return RGString.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, `$1.$2.$3-$4`);
 }

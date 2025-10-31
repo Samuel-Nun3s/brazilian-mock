@@ -11,6 +11,7 @@
 
 import { generateFullName } from "../services/nameService.js";
 import { generateCPF } from "../utils/cpfUtils.js";
+import { generateRG } from "../utils/rgUtils.js";
 
 export const getPersonalData = async (req, res) => {
 
@@ -32,7 +33,7 @@ export const getPersonalData = async (req, res) => {
       motherName,
       fatherName,
       CPF: generateCPF(),
-      RG: null,
+      RG: generateRG(),
       dateOfBirth: null,
       gender: setGender(req.query.gender),
       maritalStatus: null,
