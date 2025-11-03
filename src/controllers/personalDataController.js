@@ -1,14 +1,3 @@
-/*
-  Nome completo (distribuição demográfica realista por região/década) -
-  Nome da mãe e do pai -
-  CPF (válido, com dígitos verificadores corretos) -
-  RG (por estado, com formatação específica) -
-  Data de nascimento (com faixas etárias configuráveis)
-  Gênero -
-  Estado civil
-  Nacionalidade/Naturalidade (cidade e UF)
-*/
-
 import { generateFullName } from "../services/nameService.js";
 import { generateCPF } from "../utils/cpfUtils.js";
 import { generateRG } from "../utils/rgUtils.js";
@@ -60,31 +49,26 @@ function setGender(gender) {
 function generateBirthDate() {
   const today = new Date();
   
-  // Data mínima: 18 anos atrás
   const minDate = new Date(
     today.getFullYear() - 18,
     today.getMonth(),
     today.getDate()
   );
   
-  // Data máxima: 100 anos atrás
   const maxDate = new Date(
     today.getFullYear() - 100,
     today.getMonth(),
     today.getDate()
   );
   
-  // Sortear timestamp aleatório
   const minTimestamp = minDate.getTime();
   const maxTimestamp = maxDate.getTime();
   const randomTimestamp = Math.floor(
     Math.random() * (minTimestamp - maxTimestamp) + maxTimestamp
   );
   
-  // Converter para data
   const birthDate = new Date(randomTimestamp);
   
-  // Formatar DD/MM/AAAA
   const day = String(birthDate.getDate()).padStart(2, '0');
   const month = String(birthDate.getMonth() + 1).padStart(2, '0');
   const year = birthDate.getFullYear();

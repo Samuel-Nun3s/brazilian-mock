@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { getPersonalData } from "./controllers/personalDataController.js";
+import { getAddress } from "./controllers/addressController.js";
 
 const routes = Router();
 
@@ -8,7 +9,7 @@ routes.get('/', (req, res) => {
 });
 
 routes.get('/personal-data', getPersonalData);
-// routes.get('/address');
+routes.get('/address', getAddress);
 // routes.get('/vehicle-data');
 
 export default routes;
