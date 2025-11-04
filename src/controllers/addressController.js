@@ -7,6 +7,10 @@
 // Estado (UF)
 // Coordenadas geograficas
 
-export const getAddress = async (req, res) => {
+import { findAddress } from "../services/cepService.js";
 
+export const getAddress = async (req, res) => {
+  findAddress();
+  
+  res.status(200).json({ message: "Tudo certo aqui chefe!" });
 }

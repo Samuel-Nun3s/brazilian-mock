@@ -17,7 +17,9 @@ function isCEPInCache(cep) {
   return false;
 }
 
-function getAddress(CEP) {
+export function findAddress() {
+  const CEP = generateCEP();
+
   const CEPFormatted = removeCEPMask(CEP);
 
   const CEPExistsInCache = isCEPInCache(CEPFormatted);
@@ -30,9 +32,13 @@ function getAddress(CEP) {
 }
 
 async function fetchCEPFromVIACEP(cep) {
-  const response = await fetch(APIURLS.VIACEP, {
+  const response = await fetch(`${APIURLS.VIACEP}/${cep}/json`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
   }})
+
+  const data = response.json();
+
+  console.log("data =>", data);
 }
