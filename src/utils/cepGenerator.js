@@ -11,9 +11,7 @@ export function generateCEP(uf = null) {
 
   if (!selectedUF) {
     const states = Object.keys(CEPRANGES);
-    console.log("states =>", states);
     const randomIndex = Math.floor(Math.random() * states.length);
-    console.log("randomIndex =>", randomIndex)
     selectedUF = states[randomIndex];
   }
 

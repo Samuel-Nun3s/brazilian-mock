@@ -1,0 +1,14 @@
+{
+  "01310100": {
+    "cep": "01310-100",
+    "logradouro": "Avenida Paulista",
+    "complemento": "",
+    "bairro": "Bela Vista",
+    "localidade": "Sao Paulo",
+    "uf": "SP",
+    "coordinates": {
+      "lat": -23.561414,
+      "lng": -46.656147
+    }
+  }
+}

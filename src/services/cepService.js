@@ -17,18 +17,27 @@ function isCEPInCache(cep) {
   return false;
 }
 
-export function findAddress() {
-  const CEP = generateCEP();
+export async function findAddress() {
+  let result;
+  
+  do {
+    const CEP = generateCEP();
 
-  const CEPFormatted = removeCEPMask(CEP);
+    console.log("CEP =>", CEP);
 
-  const CEPExistsInCache = isCEPInCache(CEPFormatted);
+    const CEPFormatted = removeCEPMask(CEP);
 
-  if (CEPExistsInCache) {
-    return CEPExistsInCache;
-  }
+    const CEPExistsInCache = isCEPInCache(CEPFormatted);
 
-  return fetchCEPFromVIACEP(CEPFormatted);
+    if (CEPExistsInCache) {
+      return CEPExistsInCache;
+    }
+
+    result = await fetchCEPFromVIACEP(CEPFormatted);
+    console.log("result =>", result);
+  } while (result.erro === 'true');
+
+  console.log(result);
 }
 
 async function fetchCEPFromVIACEP(cep) {
@@ -38,7 +47,7 @@ async function fetchCEPFromVIACEP(cep) {
       "Content-Type": "application/json"
   }})
 
-  const data = response.json();
+  const data = await response.json();
 
-  console.log("data =>", data);
+  return data;
 }

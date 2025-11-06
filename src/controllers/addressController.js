@@ -10,7 +10,10 @@
 import { findAddress } from "../services/cepService.js";
 
 export const getAddress = async (req, res) => {
-  findAddress();
+  const address = findAddress();
   
-  res.status(200).json({ message: "Tudo certo aqui chefe!" });
+  res.status(200).json({
+    message: "Tudo certo aqui chefe!",
+    address: address
+  });
 }
