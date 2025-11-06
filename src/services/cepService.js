@@ -1,4 +1,4 @@
-import { generateCEP, removeCEPMask } from "../utils/cepGenerator.js";
+import { getRandomCEP, removeCEPMask } from "../utils/cepGenerator.js";
 import { loadJSON } from "../utils/jsonLoader.js";
 import { APIURLS } from "../config/api.js";
 
@@ -21,9 +21,7 @@ export async function findAddress() {
   let result;
   
   do {
-    const CEP = generateCEP();
-
-    console.log("CEP =>", CEP);
+    const CEP = getRandomCEP();
 
     const CEPFormatted = removeCEPMask(CEP);
 
@@ -34,10 +32,9 @@ export async function findAddress() {
     }
 
     result = await fetchCEPFromVIACEP(CEPFormatted);
-    console.log("result =>", result);
   } while (result.erro === 'true');
 
-  console.log(result);
+  return result;
 }
 
 async function fetchCEPFromVIACEP(cep) {

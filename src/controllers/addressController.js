@@ -1,19 +1,18 @@
-// CEP
-// Logradouro
-// Numero
-// Complemento
-// Bairro
-// Cidade
-// Estado (UF)
-// Coordenadas geograficas
-
 import { findAddress } from "../services/cepService.js";
 
 export const getAddress = async (req, res) => {
-  const address = findAddress();
+  const address = await findAddress();
   
   res.status(200).json({
-    message: "Tudo certo aqui chefe!",
-    address: address
+    success: true,
+    address: {
+      CEP: address.cep,
+      publicPlace: address.logradouro,
+      number: Math.floor(Math.random() * 100),
+      complement: address.complement || null,
+      neighborhood: address.bairro,
+      city: address.localidade,
+      state: address.estado,
+    }
   });
 }
