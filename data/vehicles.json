@@ -1,0 +1,7 @@
+{
+  "Volkswagen": ["Gol", "Polo", "T-Cross", "Virtus"],
+  "Fiat": ["Uno", "Argo", "Mobi", "Toro"],
+  "Chevrolet": ["Onix", "Tracker", "S10", "Spin"],
+  "Toyota": ["Corolla", "Hilux", "Yaris", "RAV4"],
+  "Honda": ["Civic", "HR-V", "Fit", "City"]
+}
