@@ -27,5 +27,9 @@ function calculateVerifierDigit(first10Digits) {
 }
 
 export function generateRENAVAM() {
-  
+  const first10Digits = generateFirst10Digits();
+
+  const verifierDigit = calculateVerifierDigit(first10Digits);
+
+  return first10Digits + verifierDigit;
 }

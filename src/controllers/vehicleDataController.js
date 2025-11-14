@@ -1,18 +1,10 @@
-// Placa (antiga/mercosul)
-// Renavam
-// Chassi
-// Marca modelo
-// Ano de fabricacao
-// Cor
-
-import { generateMercosulPlate, generateOldPlate } from "../utils/plateGenerator.js";
+import { generateVehicleData } from "../services/vehicleService.js";
 
 export const getVehicleData = async (req, res) => {
-
-
-  res.status(200).json({
-    oldPlate: generateOldPlate(),
-    mercosulPlate: generateMercosulPlate(),
-    renavam: ""
-  });
+  try {
+    const data = generateVehicleData();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 }

@@ -1,7 +1,145 @@
 {
-  "Volkswagen": ["Gol", "Polo", "T-Cross", "Virtus"],
-  "Fiat": ["Uno", "Argo", "Mobi", "Toro"],
-  "Chevrolet": ["Onix", "Tracker", "S10", "Spin"],
-  "Toyota": ["Corolla", "Hilux", "Yaris", "RAV4"],
-  "Honda": ["Civic", "HR-V", "Fit", "City"]
+  "vehicles": [
+    {
+      "brand": "Volkswagen",
+      "wmi": "9BW",
+      "models": [
+        { "name": "Gol", "yearRange": [1980, 2025] },
+        { "name": "Polo", "yearRange": [2002, 2025] },
+        { "name": "T-Cross", "yearRange": [2019, 2025] },
+        { "name": "Virtus", "yearRange": [2018, 2025] },
+        { "name": "Nivus", "yearRange": [2020, 2025] },
+        { "name": "Voyage", "yearRange": [2008, 2022] },
+        { "name": "Fox", "yearRange": [2003, 2021] },
+        { "name": "Up!", "yearRange": [2014, 2024] },
+        { "name": "Saveiro", "yearRange": [1982, 2025] },
+        { "name": "Amarok", "yearRange": [2010, 2025] }
+      ]
+    },
+    {
+      "brand": "Chevrolet",
+      "wmi": "9BG",
+      "models": [
+        { "name": "Onix", "yearRange": [2012, 2025] },
+        { "name": "Tracker", "yearRange": [2020, 2025] },
+        { "name": "S10", "yearRange": [1995, 2025] },
+        { "name": "Spin", "yearRange": [2012, 2025] },
+        { "name": "Montana", "yearRange": [2003, 2025] },
+        { "name": "Cruze", "yearRange": [2011, 2022] },
+        { "name": "Prisma", "yearRange": [2006, 2020] },
+        { "name": "Celta", "yearRange": [2000, 2015] },
+        { "name": "Corsa", "yearRange": [1994, 2012] }
+      ]
+    },
+    {
+      "brand": "Fiat",
+      "wmi": "9BF",
+      "models": [
+        { "name": "Uno", "yearRange": [1984, 2025] },
+        { "name": "Argo", "yearRange": [2017, 2025] },
+        { "name": "Mobi", "yearRange": [2016, 2025] },
+        { "name": "Toro", "yearRange": [2016, 2025] },
+        { "name": "Pulse", "yearRange": [2022, 2025] },
+        { "name": "Fastback", "yearRange": [2022, 2025] },
+        { "name": "Strada", "yearRange": [1998, 2025] },
+        { "name": "Palio", "yearRange": [1996, 2017] },
+        { "name": "Siena", "yearRange": [1996, 2017] },
+        { "name": "Punto", "yearRange": [2007, 2017] }
+      ]
+    },
+    {
+      "brand": "Toyota",
+      "wmi": "93Y",
+      "models": [
+        { "name": "Corolla", "yearRange": [1998, 2025] },
+        { "name": "Hilux", "yearRange": [2005, 2025] },
+        { "name": "Yaris", "yearRange": [2018, 2025] },
+        { "name": "RAV4", "yearRange": [2013, 2025] },
+        { "name": "SW4", "yearRange": [2005, 2025] },
+        { "name": "Etios", "yearRange": [2012, 2021] }
+      ]
+    },
+    {
+      "brand": "Honda",
+      "wmi": "93H",
+      "models": [
+        { "name": "Civic", "yearRange": [2001, 2025] },
+        { "name": "HR-V", "yearRange": [2015, 2025] },
+        { "name": "Fit", "yearRange": [2003, 2024] },
+        { "name": "City", "yearRange": [2009, 2025] },
+        { "name": "CR-V", "yearRange": [2008, 2025] },
+        { "name": "WR-V", "yearRange": [2017, 2025] }
+      ]
+    },
+    {
+      "brand": "Hyundai",
+      "wmi": "8AV",
+      "models": [
+        { "name": "HB20", "yearRange": [2012, 2025] },
+        { "name": "Creta", "yearRange": [2016, 2025] },
+        { "name": "Tucson", "yearRange": [2006, 2025] },
+        { "name": "i30", "yearRange": [2009, 2025] },
+        { "name": "Elantra", "yearRange": [2011, 2025] },
+        { "name": "Santa Fe", "yearRange": [2007, 2025] }
+      ]
+    },
+    {
+      "brand": "Renault",
+      "wmi": "9BR",
+      "models": [
+        { "name": "Kwid", "yearRange": [2017, 2025] },
+        { "name": "Sandero", "yearRange": [2008, 2025] },
+        { "name": "Logan", "yearRange": [2007, 2025] },
+        { "name": "Duster", "yearRange": [2011, 2025] },
+        { "name": "Captur", "yearRange": [2017, 2025] },
+        { "name": "Oroch", "yearRange": [2015, 2025] }
+      ]
+    },
+    {
+      "brand": "Nissan",
+      "wmi": "9BD",
+      "models": [
+        { "name": "Kicks", "yearRange": [2016, 2025] },
+        { "name": "Versa", "yearRange": [2011, 2025] },
+        { "name": "Frontier", "yearRange": [2002, 2025] },
+        { "name": "Sentra", "yearRange": [2007, 2025] },
+        { "name": "March", "yearRange": [2011, 2022] }
+      ]
+    },
+    {
+      "brand": "Jeep",
+      "wmi": "9BJ",
+      "models": [
+        { "name": "Renegade", "yearRange": [2015, 2025] },
+        { "name": "Compass", "yearRange": [2016, 2025] },
+        { "name": "Commander", "yearRange": [2021, 2025] }
+      ]
+    },
+    {
+      "brand": "Ford",
+      "wmi": "935",
+      "models": [
+        { "name": "Ka", "yearRange": [1997, 2021] },
+        { "name": "EcoSport", "yearRange": [2003, 2022] },
+        { "name": "Ranger", "yearRange": [1998, 2025] },
+        { "name": "Fusion", "yearRange": [2006, 2018] },
+        { "name": "Fiesta", "yearRange": [1996, 2019] },
+        { "name": "Focus", "yearRange": [2000, 2019] }
+      ]
+    }
+  ],
+  "colors": [
+    "Branco",
+    "Preto",
+    "Prata",
+    "Cinza",
+    "Vermelho",
+    "Azul",
+    "Bege",
+    "Verde",
+    "Amarelo",
+    "Marrom",
+    "Dourado",
+    "Laranja"
+  ]
 }
